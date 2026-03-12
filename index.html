@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Diosa Oscura · Melany</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,400&family=Uncial+Antiqua&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CANVAS FUEGO INFERNAL -->
+    <canvas id="hellfire" class="hellfire-canvas"></canvas>
+
+    <!-- LLAMAS CSS EN LA BASE -->
+    <div class="flame-base">
+        <div class="bottom-flames">
+            <div class="css-flame f1"></div>
+            <div class="css-flame f2"></div>
+            <div class="css-flame f3"></div>
+            <div class="css-flame f4"></div>
+            <div class="css-flame f5"></div>
+            <div class="css-flame f6"></div>
+            <div class="css-flame f7"></div>
+            <div class="css-flame f8"></div>
+            <div class="css-flame f9"></div>
+            <div class="css-flame f10"></div>
+            <div class="css-flame f11"></div>
+            <div class="css-flame f12"></div>
+            <div class="css-flame f13"></div>
+            <div class="css-flame f14"></div>
+            <div class="css-flame f15"></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         PANTALLA RITUAL INICIAL
+    ═══════════════════════════════════════ -->
+    <div id="ritualScreen" class="ritual-screen">
+
+        <!-- Sello pentagramático grande y mejorado -->
+        <div class="big-seal-wrap">
+            <svg class="big-seal-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="sealGlow">
+                        <feGaussianBlur stdDeviation="3" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                    <radialGradient id="sealGrad" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#ff6600" stop-opacity="0.15" />
+                        <stop offset="100%" stop-color="transparent" />
+                    </radialGradient>
+                </defs>
+                <!-- Círculo de fondo luminoso -->
+                <circle cx="200" cy="200" r="195" fill="url(#sealGrad)" />
+                <!-- Anillos giratorios -->
+                <circle cx="200" cy="200" r="192" fill="none" stroke="#aa2200" stroke-width="1.5" stroke-dasharray="8 4"
+                    class="spin-cw slow" />
+                <circle cx="200" cy="200" r="178" fill="none" stroke="#cc3300" stroke-width="1" class="spin-ccw" />
+                <circle cx="200" cy="200" r="162" fill="none" stroke="#ff4400" stroke-width="0.8" stroke-dasharray="3 6"
+                    class="spin-cw fast" />
+                <!-- Runas en el anillo exterior (texto circular) -->
+                <path id="runeCircle" d="M200,200 m-170,0 a170,170 0 1,1 340,0 a170,170 0 1,1 -340,0" fill="none" />
+                <text font-family="serif" font-size="11" fill="#ff4400" filter="url(#sealGlow)" letter-spacing="4"
+                    opacity="0.8">
+                    <textPath href="#runeCircle">⛧ IGNIS ⛧ MELANY ⛧ AETERNUS ⛧ AMOR ⛧ TENEBRIS ⛧ MORTIS ⛧ VICTORIA ⛧
+                        REGINA</textPath>
+                </text>
+                <!-- Pentagrama principal -->
+                <polygon points="200,30  369,148 306,340 94,340 31,148" fill="none" stroke="#ff4400" stroke-width="2.5"
+                    filter="url(#sealGlow)" class="spin-cw slower" transform-origin="200 200" />
+                <!-- Pentagrama invertido -->
+                <polygon points="200,370 31,252 94,60 306,60 369,252" fill="none" stroke="#cc2200" stroke-width="1.5"
+                    opacity="0.7" class="spin-ccw slower" transform-origin="200 200" />
+                <!-- Estrella de 6 puntas (hexagrama) -->
+                <polygon points="200,60  336,260 64,260" fill="none" stroke="#881100" stroke-width="1" opacity="0.5" />
+                <polygon points="200,340 64,140 336,140" fill="none" stroke="#881100" stroke-width="1" opacity="0.5" />
+                <!-- Cruz invertida central -->
+                <line x1="200" y1="155" x2="200" y2="255" stroke="#ff4400" stroke-width="2.5" filter="url(#sealGlow)" />
+                <line x1="170" y1="185" x2="230" y2="185" stroke="#ff4400" stroke-width="2.5" filter="url(#sealGlow)" />
+                <!-- Círculo central con brillo -->
+                <circle cx="200" cy="200" r="16" fill="#ff2200" opacity="0.85" filter="url(#sealGlow)" />
+                <circle cx="200" cy="200" r="8" fill="#ffaa00" opacity="0.9" />
+                <!-- Símbolos demoníacos en las puntas del pentagrama -->
+                <text x="192" y="22" font-size="14" fill="#ff4400" filter="url(#sealGlow)">⛧</text>
+                <text x="365" y="155" font-size="14" fill="#ff4400" filter="url(#sealGlow)">☠</text>
+                <text x="307" y="355" font-size="14" fill="#ff4400" filter="url(#sealGlow)">🜏</text>
+                <text x="80" y="355" font-size="14" fill="#ff4400" filter="url(#sealGlow)">🜏</text>
+                <text x="20" y="155" font-size="14" fill="#ff4400" filter="url(#sealGlow)">☠</text>
+            </svg>
+        </div>
+
+        <h1 class="ritual-title">EL RITUAL<br>INFERNAL</h1>
+        <p class="ritual-subtitle">Una ofrenda de fuego para mi diosa en su día</p>
+
+        <button id="ritualStartBtn" class="btn-ignite">
+            <span class="btn-glow"></span>
+            <span class="btn-text">⛧ Abrir las Puertas del Infierno ⛧</span>
+        </button>
+
+        <div class="ritual-candles">
+            <div class="candle tall">
+                <div class="flame big-flame"></div>
+            </div>
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+            <div class="candle tall">
+                <div class="flame big-flame"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════
+         MODAL: IMAGEN + MENSAJE (se abre al clicar el portal)
+    ═══════════════════════════════ -->
+    <div id="portalModal" class="portal-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="modal-close" id="modalClose" title="Cerrar">&times;</button>
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <!-- Partículas específicas del modal -->
+            <canvas id="modalParticles" class="modal-particles-canvas"></canvas>
+
+            <!-- Aura demoníaca envolvente -->
+            <div class="modal-aura"></div>
+
+            <!-- Portal como imagen de fondo dentro del modal -->
+            <div class="modal-img-container">
+                <img src="demon_portal.png" alt="Portal Demoníaco" class="modal-portal-img">
+                <div class="portal-pulse-overlay"></div>
+            </div>
+
+            <!-- Mensaje encima con animación de revelado -->
+            <div class="modal-message">
+                <div class="parchment-corner tl"></div>
+                <div class="parchment-corner tr"></div>
+                <div class="parchment-corner bl"></div>
+                <div class="parchment-corner br"></div>
+
+                <h2 class="salutation reveal-item">Mi amada <span class="name-highlight">Melany</span>,</h2>
+
+                <div class="message-body">
+                    <p class="reveal-item">En este día tan especial para ti, mi amada esposita, quiero decirte gracias
+                        por existir y por aparecer en mi
+                        vida. Eres la llama que ilumina mis días y la razón de muchas de mis sonrisas. Te adoro y te amo
+                        mucho;
+                        nunca cambies, porque eres la mejor.</p>
+                    <p class="reveal-item">Estoy inmensamente agradecido de tenerte a mi lado, mi amor. Eres mi vida
+                        entera, y no existe nadie más a
+                        quien quiera amar como a ti. Tu presencia llena mi corazón de alegría y le da sentido a cada
+                        momento que
+                        compartimos.</p>
+                    <p class="reveal-item">Quiero pasar el resto de mi vida contigo, porque nuestro amor ha sido
+                        construido con el tiempo, con cariño
+                        y con la certeza de que estamos destinados a caminar juntos. Gracias por ser quien eres y por
+                        hacer mi vida
+                        más feliz cada día.</p>
+                    <p class="signature reveal-item">Con amor eterno, <em>tu Ron</em> 🔥</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainContent" class="main-content hidden">
+
+        <div id="particles" class="particles-container"></div>
+
+        <!-- IMAGEN DIOSA OSCURA DE FONDO (parallax) -->
+        <div class="bg-goddess-wrap">
+            <img src="dark_goddess.png" alt="Dark Goddess" class="bg-goddess-img">
+        </div>
+
+        <!-- HEADER -->
+        <header class="site-header">
+            <div class="header-symbols">⛧ · ☠ · ☽⛧☾ · ☠ · ⛧</div>
+            <div class="title-block">
+                <p class="title-for">para mi</p>
+                <h1 class="title-name-melany">MELANY</h1>
+                <p class="title-tagline">⚱ Diosa Oscura · Feliz Cumpleaños ⚱</p>
+            </div>
+            <!-- Audio Widget -->
+            <div class="audio-widget">
+                <button id="audioToggle" class="audio-btn">
+                    <svg id="audioIconSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+                    </svg>
+                </button>
+                <div class="audio-waves" id="audioWaves">
+                    <span class="wave"></span><span class="wave"></span>
+                    <span class="wave"></span><span class="wave"></span><span class="wave"></span>
+                </div>
+                <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.05" value="0.5">
+            </div>
+        </header>
+
+        <main>
+
+            <!-- ── SECCIÓN: PORTAL DEMONÍACO (click para abrir) ── -->
+            <section class="portal-section">
+                <div class="portal-thumb" id="openPortalBtn" tabindex="0" role="button"
+                    title="Haz clic para abrir el ritual">
+                    <img src="demon_portal.png" alt="Portal Demoníaco" class="portal-img">
+                    <!-- Sello pentagramático giratorio sobre el thumb -->
+                    <div class="portal-overlay-seal">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <filter id="g2">
+                                    <feGaussianBlur stdDeviation="2.5" result="b" />
+                                    <feMerge>
+                                        <feMergeNode in="b" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <circle cx="100" cy="100" r="96" fill="none" stroke="rgba(255,68,0,0.6)" stroke-width="1.5"
+                                class="spin-cw" />
+                            <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,100,0,0.4)" stroke-width="0.8"
+                                stroke-dasharray="5 3" class="spin-ccw" />
+                            <polygon points="100,10 183,67 152,167 48,167 17,67" fill="rgba(255,40,0,0.06)"
+                                stroke="rgba(255,80,0,0.8)" stroke-width="1.5" filter="url(#g2)" />
+                            <polygon points="100,190 17,133 48,33 152,33 183,133" fill="none"
+                                stroke="rgba(200,30,0,0.55)" stroke-width="1" opacity="0.7" />
+                            <circle cx="100" cy="100" r="10" fill="#ff4400" opacity="0.9" filter="url(#g2)" />
+                        </svg>
+                    </div>
+                    <!-- Hint de click -->
+                    <div class="portal-click-hint">⛧ Toca para Abrir el Ritual ⛧</div>
+                </div>
+            </section>
+
+            <!-- ── SECCIÓN: MELANY CORAZÓN INFERNAL ── -->
+            <section class="heart-section">
+                <div class="heart-flames">
+                    <div class="h-flame hf1"></div>
+                    <div class="h-flame hf2"></div>
+                    <div class="h-flame hf3"></div>
+                    <div class="h-flame hf4"></div>
+                    <div class="h-flame hf5"></div>
+                </div>
+                <svg class="gothic-heart-svg" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="heartGrad" cx="40%" cy="35%" r="65%">
+                            <stop offset="0%" stop-color="#ff8800" />
+                            <stop offset="40%" stop-color="#cc2200" />
+                            <stop offset="80%" stop-color="#800000" />
+                            <stop offset="100%" stop-color="#1a0000" />
+                        </radialGradient>
+                        <filter id="heartFire">
+                            <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" seed="5"
+                                result="noise" />
+                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" />
+                        </filter>
+                    </defs>
+                    <path
+                        d="M100 160 C60 130 10 100 10 55 C10 25 35 5 65 5 C80 5 93 15 100 25 C107 15 120 5 135 5 C165 5 190 25 190 55 C190 100 140 130 100 160Z"
+                        fill="url(#heartGrad)" filter="url(#heartFire)" class="heart-path" />
+                    <path
+                        d="M100 160 C60 130 10 100 10 55 C10 25 35 5 65 5 C80 5 93 15 100 25 C107 15 120 5 135 5 C165 5 190 25 190 55 C190 100 140 130 100 160Z"
+                        fill="none" stroke="rgba(255,150,0,0.35)" stroke-width="1" />
+                    <ellipse cx="75" cy="55" rx="20" ry="14" fill="rgba(255,200,100,0.1)"
+                        transform="rotate(-25 75 55)" />
+                </svg>
+                <p class="heart-caption">🔥 Feliz Cumpleaños, Mi Diosa 🔥</p>
+            </section>
+
+            <!-- ── SECCIÓN: CALAVERA DEMONÍACA ── -->
+            <section class="skull-section">
+                <div class="skull-container">
+                    <div class="skull-side-runes left-runes">
+                        <div class="rune-symbol">⛧</div>
+                        <div class="rune-symbol">☠</div>
+                        <div class="rune-symbol">☽</div>
+                        <div class="rune-symbol">🜏</div>
+                    </div>
+                    <img src="demon_skull.png" alt="Calavera Demoníaca" class="skull-img">
+                    <div class="skull-side-runes right-runes">
+                        <div class="rune-symbol">☾</div>
+                        <div class="rune-symbol">🜏</div>
+                        <div class="rune-symbol">☠</div>
+                        <div class="rune-symbol">⛧</div>
+                    </div>
+                </div>
+                <!-- Pentagramas decorativos en esquinas -->
+                <div class="corner-pentagrams">
+                    <svg class="corner-seal tl-seal" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="47" fill="none" stroke="#ff4400" stroke-width="1" opacity="0.5"
+                            class="spin-cw" />
+                        <polygon points="50,5 92,33 76,83 24,83 8,33" fill="none" stroke="#cc2200" stroke-width="1.5"
+                            opacity="0.7" />
+                        <circle cx="50" cy="50" r="6" fill="#ff2200" opacity="0.7" />
+                    </svg>
+                    <svg class="corner-seal tr-seal" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="47" fill="none" stroke="#ff4400" stroke-width="1" opacity="0.5"
+                            class="spin-ccw" />
+                        <polygon points="50,5 92,33 76,83 24,83 8,33" fill="none" stroke="#cc2200" stroke-width="1.5"
+                            opacity="0.7" />
+                        <circle cx="50" cy="50" r="6" fill="#ff2200" opacity="0.7" />
+                    </svg>
+                </div>
+            </section>
+
+            <!-- ── CITAS DEMONÍACAS ── -->
+            <section class="quotes-section">
+                <div class="gothic-quotes">
+                    <blockquote class="gothic-quote active">Desde las profundidades del infierno, mi amor por ti arde
+                        eterno.</blockquote>
+                    <blockquote class="gothic-quote">Eres el eclipse que oscurece mi mundo y lo hace hermoso.
+                    </blockquote>
+                    <blockquote class="gothic-quote">Cada año que pasa, más profundo es el fuego que te tengo, mi diosa.
+                    </blockquote>
+                    <div class="quote-dots">
+                        <span class="qdot active"></span>
+                        <span class="qdot"></span>
+                        <span class="qdot"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- mensaje movido dentro del portal, esta sección ya no es necesaria -->
+
+            <!-- ── SECCIÓN: GALERÍA SECRETA PROTEGIDA ── -->
+            <section class="secret-gallery-section">
+                <div class="gallery-lock-container" id="galleryLock">
+                    <div class="lock-icon">🔒</div>
+                    <h2 class="gallery-title">ARCHIVO CONFIDENCIAL</h2>
+                    <p class="gallery-subtitle">Ingresa la clave sagrada para ver los recuerdos</p>
+                    <div class="lock-input-group">
+                        <input type="password" id="galleryPass" placeholder="Clave de 8 dígitos..." maxlength="8">
+                        <button id="unlockBtn" class="btn-unlock">DESBLOQUEAR ⛧</button>
+                    </div>
+                    <p id="errorMsg" class="error-msg hidden">Clave incorrecta. El fuego te consumirá.</p>
+                </div>
+
+                <div class="gallery-container hidden" id="secretGallery">
+                    <h2 class="gallery-title-unlocked">RECUERDOS ETERNOS</h2>
+                    <div class="photo-grid" id="photoGrid">
+                        <!-- Las fotos se cargarán dinámicamente aquí por JS tras validar la clave -->
+                    </div>
+                    <p class="gallery-footer-note">Fuimos forjados en el mismo fuego. 🔥</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <!-- Pentagrama pequeño en el footer -->
+            <svg class="footer-seal" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="30" r="28" fill="none" stroke="#ff2200" stroke-width="0.8" opacity="0.5"
+                    class="spin-cw slow" />
+                <polygon points="30,3 54,20 46,50 14,50 6,20" fill="none" stroke="#ff2200" stroke-width="1.2"
+                    opacity="0.7" />
+                <circle cx="30" cy="30" r="4" fill="#ff2200" opacity="0.8" />
+            </svg>
+            <div class="footer-runes">⛧ · ☠ · 🔥 · ☠ · ⛧</div>
+            <p class="footer-text">Amor Aeternus · MELANY · 2026</p>
+        </footer>
+
+    </div>
+
+    <!-- ── MODAL: LIGHTBOX (VISTA COMPLETA) ── -->
+    <div id="lightboxModal" class="lightbox-modal hidden" role="dialog" aria-modal="true">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <button id="closeLightbox" class="lightbox-close">&times;</button>
+            <img id="lightboxImg" src="" alt="Vista completa">
+        </div>
+    </div>
+
+    <audio id="bgAudio" src="Stratovarius - What Can I Say.mp3" loop preload="auto">
+        <source src="Stratovarius - What Can I Say.mp3" type="audio/mpeg">
+    </audio>
+    <script src="script.js"></script>
+</body>
+
+</html>
